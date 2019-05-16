@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
+import DefaultInput from '../../components/UI/DefaultInput/DefaultInput';
 import startMainTabs from '../MainTabs/startMainTabs';
 
 class AuthScreen extends Component {
@@ -14,15 +15,9 @@ class AuthScreen extends Component {
                 <Text>Please Log In</Text>
                 <Button title="Switch To Login" />
                 <View style={styles.inputContainer}>
-                    <TextInput placeholder="Your email address"
-                               style={styles.input}
-                               underlineColorAndroid="transparent" />
-                    <TextInput placeholder="Password"
-                               style={styles.input}
-                               underlineColorAndroid="transparent" />
-                    <TextInput placeholder="Confirm Password"
-                               style={styles.input}
-                               underlineColorAndroid="transparent" />
+                    <DefaultInput placeholder="Your email address" />
+                    <DefaultInput placeholder="Password" />
+                    <DefaultInput placeholder="Confirm Password" />
                 </View>
                 <Button title="Submit" onPress={this.loginHandler} />
             </View>
@@ -38,13 +33,6 @@ const styles = StyleSheet.create({
     },
     inputContainer: {
         width: '80%'
-    },
-    input: {
-        width: '100%',
-        borderWidth: 1,
-        borderColor: '#eee',
-        padding: 5,
-        margin: 8
     }
 });
 
